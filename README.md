@@ -8,12 +8,16 @@ with the SAT (Boolean satisfiability problem) solving to address the configurati
 in five real-world SPLs (Linux, eCos, Fiasco, FreeBSD and uClinux). 
 The original SATIBEA [1] is the first hybird method that combinges SAT sovling with the muation operator of the IBEA algorithm.
 Specially, we also release two additional algorihtms for solving two SPLs
-with realisitc values and constraints of quality attributes (AmazonEC2 [3] and Drupal [4]).
+with realisitc values and constraints of quality attributes (AmazonEC2 and Drupal).
 
 The implementation framework of each algorithm variant adopts the IBEA algorithm template
 of jMetal[5,6], an open-source Java-based framework for multi-objective optimization with metaheuristics.
 Moreover, the constraint solving uses a widely deploy SAT solver Sat4j[7] as the underlying SAT solver.
 
+In this repository, we release the source code and the origianl experimental results. 
+Researchers firstly need to conduct seven feature models mentioned in above so that they can run our algorithms successfully. 
+The feature model of Linux, eCos, Fiasco, FreeBSD and uClinux can refer to Henard et al.'s [1].
+The feature model of Drupal and AmazonEC2 can refer to [3, 4], respectively.
 
 ---------------------------------------------------------------------------------------------------------------
 References

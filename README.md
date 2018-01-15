@@ -18,6 +18,7 @@ References
 [5] Jesús García-Galán, Pablo Trinidad, Omer F. Rana, and Antonio Ruiz Cortés. 2016. Automated configuration support for infrastructure migration to the cloud. Future Generation Comp. Syst. 55 (2016), 200–212.
 
 [6] Ana B. Sánchez, Sergio Segura, José Antonio Parejo, and Antonio Ruiz Cortés. 2017. Variability testing in the wild: the Drupal case study. Software and System Modeling 16, 1 (2017), 173–194.
+
 ---------------------------------------------------------------------------------------------------------------
 
 

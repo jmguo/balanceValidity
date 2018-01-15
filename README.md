@@ -5,9 +5,11 @@ Introduction
 
 
 
-References
+
 
 ---------------------------------------------------------------------------------------------------------------
+References
+
 [1] J. J. Durillo, A. J. Nebro, and E. Alba, “The jMetal framework for multi-objective optimization: Design and architecture,” in Proceedings of the IEEE Congress on Evolutionary Computation (CEC), Barcelona, Spain. IEEE, pp. 4138–4325.
 
 [2] Juan J. Durillo and Antonio J. Nebro. 2011. jMetal: A Java framework for multiobjective optimization. Advances in Engineering Software 42 (2011), 760–771.

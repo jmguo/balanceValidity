@@ -46,8 +46,7 @@ For five SPLs:
 
 We mainly introduce the source code of the SATIBEA. The others are similar to the SATIBEA.
    1. The Common folder contains the following files:
-	 SAT_Decision.java: a customized file of performing constriant checking and 
-                              a function returning a valid configuration of the feature model.
+	 SAT_Decision.java: a customized file of performing constriant checking and a function returning a valid configuration of the feature model.
 					
 	 WriteStreamAppend.java: this code can be used to recored the experimential results and 
                                   important details during the whole process of algorithm running.
@@ -80,7 +79,6 @@ We mainly introduce the source code of the SATIBEA. The others are similar to th
 					Please, starting from here, the entrie process is automated.							
      3. The SATIBEAv2 algorithm is composed of the SATIBEAv2 folder and part code file in Common folder (SATIBEA_BinarySolution.java, SAT_Decision.java, WriteStreamAppend.java and SATIBEA_SinglePointCrossover.java). Specially, The "RichSeedGen.java" is used to generate a solution according to the rich seed.
 
----------------------------------------------------------------------------------------------------------------	
 
 For two real-world SPLs:
 

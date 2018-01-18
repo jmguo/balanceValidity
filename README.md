@@ -58,9 +58,8 @@ We mainly introduce the source code of the SATIBEA. The others are similar to th
 	  1.5> SATIBEA_SinglePointCrossover.java: the source code of the singlepoint crossover operation.
 	  
 	  1.6> SATIBEA_Problem.java: we define the structure of optimization problem which shoule be solved.
-				This code shoule input the featue model file, the constraint file and the attribute file of featues.
-				
-    2. The SATIBEA folder contains the following files:		
+				This code shoule input the featue model file, the constraint file and the attribute file of featues.			
+    2. The SATIBEA folder contains the following files:
 	  2.1> IBEATimeLimited.java: we perform the SATIBEA algorithm evaluation with the terminal condition.
 	  
 	  2.2> SATIBEA_SettingsIBEA.java: we configure the SATIBEA algorithm, 

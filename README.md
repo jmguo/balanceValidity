@@ -89,3 +89,9 @@ For two real-world SPLs:
    1. For two real-world SPLs: the "realSubjects" folder is the soruce code of SATIBEA and SATIBEAv5 for address two real-world SPLs.
       
       1.1> For Drupal, the folder structure is similar to the above descripiton.
+           
+	   realSubjects/SATIBEA_Drupal/Common: the general source codes
+	   
+	   realSubjects/SATIBEA_Drupal/SATIBEA_Drupal: the core source codes of SATIBEA
+	   
+	   realSubjects/SATIBEA_Drupal/SATIBEAv5_Drupal: the core source codes of SATIBEAv5

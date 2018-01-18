@@ -60,22 +60,27 @@ We mainly introduce the source code of the SATIBEA. The others are similar to th
 	  1.6> SATIBEA_Problem.java: we define the structure of optimization problem which shoule be solved.
 				This code shoule input the featue model file, the constraint file and the attribute file of featues.			
     2. The SATIBEA folder contains the following files:
-    
+    	  
 	  2.1> IBEATimeLimited.java: we perform the SATIBEA algorithm evaluation with the terminal condition.
 	  
-	  2.2> SATIBEA_SettingsIBEA.java: we configure the SATIBEA algorithm, 
-					including problem, the crossover operation, the muation operation, 
-                                        the seleciton operation and the parameter setting of populationsize, 
-                                        mutationProbability and crossoverProbability. 
-					
+	  2.2> SATIBEA_SettingsIBEA.java: we configure the SATIBEA algorithm,
+					including problem, the crossover operation, the muation operation,
+                                        the seleciton operation and the parameter setting of populationsize,
+                                        mutationProbability and crossoverProbability.
 	  2.3> SATIBEA_NewMutation.java: a smart mutation strategy 
-					in which SAT solving is invoked with a probability to return a valid 
-                                        solution during the mutation operation. Meanwhile, this strategy includes 
+	                                in which SAT solving is invoked with a probability to return a valid 
+					solution during the mutation operation. Meanwhile, this strategy includes
                                         the standard bit-flip mutation and SAT sovling.
 					
 	  2.4> SATIBEA_Variants_Main.java: the main entrace to an algorithm. 
 					Please, starting from here, the entrie process is automated.					
-     3. The SATIBEAv2 algorithm is composed of the SATIBEAv2 folder and part code file in Common folder (SATIBEA_BinarySolution.java, SAT_Decision.java, WriteStreamAppend.java and SATIBEA_SinglePointCrossover.java). Specially, The "RichSeedGen.java" is used to generate a solution according to the rich seed.
+     
+     
+     
+     
+     3. The SATIBEAv2 algorithm is composed of the SATIBEAv2 folder and part code file in Common folder 
+        (SATIBEA_BinarySolution.java, SAT_Decision.java, WriteStreamAppend.java and SATIBEA_SinglePointCrossover.java). 
+	Specially, The "RichSeedGen.java" is used to generate a solution according to the rich seed.
      
 For two real-world SPLs:
 

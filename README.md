@@ -1,7 +1,7 @@
 # balanceValidity
 To Preserve or Not to Preserve Invalid Solutions in Search-Based Software Engineering: A Case Study in Software Product Lines
 
-##Introduction
+Introduction
 
 This work releases five different SATIBEA variants that combins the IBEA (Indicator-Based Evolutionary Algorithm)
 with the SAT (Boolean satisfiability problem) solving to address the configuration optimization problem 
@@ -20,7 +20,7 @@ The feature model of Linux, eCos, Fiasco, FreeBSD and uClinux can refer to Henar
 The feature model of Drupal and AmazonEC2 can refer to [5, 6], respectively.
 
 ---------------------------------------------------------------------------------------------------------------
-##References
+References
 
 [1] Christopher Henard, Mike Papadakis, Mark Harman, and Yves Le Traon. 2015. Combining multi-objective search and constraint solving for configuring large software product lines. In Proceedings of 37th IEEE/ACM International Conference on Software Engineering (ICSE). 517–528.
 
@@ -37,14 +37,14 @@ The feature model of Drupal and AmazonEC2 can refer to [5, 6], respectively.
 ---------------------------------------------------------------------------------------------------------------
 
 
-##How to run?
+How to run?
 
-###For five SPLs:
+For five SPLs:
         1. The core jar packages used by all variants are in "lib" folder. They must be importted into a project.
 	2. The general jave files of five SATIBEA variants are in "Common" folder.
 	3. Each variant framework is composed of the "Common" folder and a special algorithm folder including SATIBEA, SATIBEAv1, SATIBEAv2, SATIBEAv3, SATIBEAv4 and SATIBEAv5
 
-####We mainly introduce the source code of the SATIBEA. The others are similar to the SATIBEA.
+We mainly introduce the source code of the SATIBEA. The others are similar to the SATIBEA.
         1. The Common folder contains the following files:
             1.1> SAT_Decision.java: a customized file of performing constriant checking and a function returning a valid configuration of the feature model.				
 	  
@@ -78,9 +78,9 @@ The feature model of Drupal and AmazonEC2 can refer to [5, 6], respectively.
          3. The SATIBEAv2 algorithm is composed of the SATIBEAv2 folder and part code file in Common folder 
             (SATIBEA_BinarySolution.java, SAT_Decision.java, WriteStreamAppend.java and SATIBEA_SinglePointCrossover.java). 
 	    Specially, The "RichSeedGen.java" is used to generate a solution according to the rich seed.
-     
-For two real-world SPLs:
 
+---------------------------------------------------------------------------------------------------------------	
+For two real-world SPLs:
      1. For two real-world SPLs:
 	 The "realSubjects" folder is the soruce code of SATIBEA and SATIBEAv5 for address two real-world SPLs.
 	 For Drupal, the folder structure is similar to the above descripiton.

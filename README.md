@@ -80,8 +80,7 @@ We mainly introduce the source code of the SATIBEA. The others are similar to th
 					Please, starting from here, the entrie process is automated.						
 
 						
-     3. The SATIBEAv2 algorithm is composed of the SATIBEAv2 folder and part code file in Common folder (SATIBEA_BinarySolution.java, SAT_Decision.java, WriteStreamAppend.java and SATIBEA_SinglePointCrossover.java).
-Specially, The "RichSeedGen.java" is used to generate a solution according to the rich seed.
+     3. The SATIBEAv2 algorithm is composed of the SATIBEAv2 folder and part code file in Common folder (SATIBEA_BinarySolution.java, SAT_Decision.java, WriteStreamAppend.java and SATIBEA_SinglePointCrossover.java). Specially, The "RichSeedGen.java" is used to generate a solution according to the rich seed.
 
 ---------------------------------------------------------------------------------------------------------------	
 

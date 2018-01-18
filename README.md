@@ -90,10 +90,10 @@ For two real-world SPLs:
       
       1.1> For Drupal, the folder structure is similar to the above descripiton.
            
-	   realSubjects/SATIBEA_Drupal/Common: the general source codes
+	     realSubjects/SATIBEA_Drupal/Common: the general source codes
 	   
-	   realSubjects/SATIBEA_Drupal/SATIBEA_Drupal: the core source codes of SATIBEA
+	     realSubjects/SATIBEA_Drupal/SATIBEA_Drupal: the core source codes of SATIBEA
 	   
-	   realSubjects/SATIBEA_Drupal/SATIBEAv5_Drupal: the core source codes of SATIBEAv5
+	     realSubjects/SATIBEA_Drupal/SATIBEAv5_Drupal: the core source codes of SATIBEAv5
       
       1.2> For Amazon, the complete source codes of SATIBEAv5 are given in "realSubjects/SATIBEAv5_Amazon".

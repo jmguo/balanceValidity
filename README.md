@@ -46,18 +46,13 @@ For five SPLs:
 
 We mainly introduce the source code of the SATIBEA. The others are similar to the SATIBEA.
    1. The Common folder contains the following files:
-         1.1> SAT_Decision.java: a customized file of performing constriant checking and a function returning a valid configuration of the feature model.
-					
-	 1.2> WriteStreamAppend.java: this code can be used to recored the experimential results and 
+          1.1> SAT_Decision.java: a customized file of performing constriant checking and a function returning a valid configuration of the feature model.				
+	  1.2> WriteStreamAppend.java: this code can be used to recored the experimential results and 
                                   important details during the whole process of algorithm running.
-
-	 1.3> SATIBEA_BinarySolution.java: the structure of the solution.						
-						
-	 1.4> SATIBEA_BitFlipMutation.java: the soruce code of the bit-flip muation operation.
-
-	 1.5> SATIBEA_SinglePointCrossover.java: the source code of the singlepoint crossover operation.
-
-	 1.6> SATIBEA_Problem.java: we define the structure of optimization problem which shoule be solved.
+	  1.3> SATIBEA_BinarySolution.java: the structure of the solution.					
+	  1.4> SATIBEA_BitFlipMutation.java: the soruce code of the bit-flip muation operation.
+	  1.5> SATIBEA_SinglePointCrossover.java: the source code of the singlepoint crossover operation.
+	  1.6> SATIBEA_Problem.java: we define the structure of optimization problem which shoule be solved.
 				This code shoule input the featue model file, the constraint file and 
                                 the attribute file of featues.
 

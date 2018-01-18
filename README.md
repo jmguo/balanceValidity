@@ -95,3 +95,5 @@ For two real-world SPLs:
 	   realSubjects/SATIBEA_Drupal/SATIBEA_Drupal: the core source codes of SATIBEA
 	   
 	   realSubjects/SATIBEA_Drupal/SATIBEAv5_Drupal: the core source codes of SATIBEAv5
+      
+      1.2> For Amazon, the complete source codes of SATIBEAv5 are given in "realSubjects/SATIBEAv5_Amazon".

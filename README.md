@@ -40,8 +40,58 @@ References
 How to run?
 
 For five SPLs:
+        1. The core jar packages used by all variants are in "lib" folder. They must be importted into a project.
+	2. The general jave files of five SATIBEA variants are in "Common" folder.
+	3. Each variant framework is composed of the "Common" folder and a special algorithm folder including SATIBEA, SATIBEAv1, SATIBEAv2, SATIBEAv3, SATIBEAv4 and SATIBEAv5
 
+We mainly introduce the source code of the SATIBEA. The others are similar to the SATIBEA.
+   1. The Common folder contains the following files:
+	 SAT_Decision.java: a customized file of performing constriant checking and 
+                              a function returning a valid configuration of the feature model.
+					
+	 WriteStreamAppend.java: this code can be used to recored the experimential results and 
+                                  important details during the whole process of algorithm running.
+
+	 SATIBEA_BinarySolution.java: the structure of the solution.						
+						
+	 SATIBEA_BitFlipMutation.java: the soruce code of the bit-flip muation operation.
+
+	 SATIBEA_SinglePointCrossover.java: the source code of the singlepoint crossover operation.
+
+	 SATIBEA_Problem.java: we define the structure of optimization problem which shoule be solved.
+				This code shoule input the featue model file, the constraint file and 
+                                the attribute file of featues.
+
+
+    2. The SATIBEA folder contains the following files:		
+	 IBEATimeLimited.java: we perform the SATIBEA algorithm evaluation with the terminal condition.
+
+	 SATIBEA_SettingsIBEA.java: we configure the SATIBEA algorithm, 
+					including problem, the crossover operation, the muation operation, 
+                                        the seleciton operation and the parameter setting of populationsize, 
+                                        mutationProbability and crossoverProbability. 
+						
+	 SATIBEA_NewMutation.java: a smart mutation strategy 
+					in which SAT solving is invoked with a probability to return a valid 
+                                        solution during the mutation operation. Meanwhile, this strategy includes 
+                                        the standard bit-flip mutation and SAT sovling.
+
+	 SATIBEA_Variants_Main.java: the main entrace to an algorithm. 
+					Please, starting from here, the entrie process is automated.						
+
+						
+     3. The SATIBEAv2 algorithm is composed of the SATIBEAv2 folder and part code file in Common folder (SATIBEA_BinarySolution.java, SAT_Decision.java, WriteStreamAppend.java and SATIBEA_SinglePointCrossover.java).
+Specially, The "RichSeedGen.java" is used to generate a solution according to the rich seed.
+
+---------------------------------------------------------------------------------------------------------------	
 
 For two real-world SPLs:
 
+     1. For two real-world SPLs:
+	 The "realSubjects" folder is the soruce code of SATIBEA and SATIBEAv5 for address two real-world SPLs.
+	 For Drupal, the folder structure is similar to the above descripiton.
+		 realSubjects/SATIBEA_Drupal/Common: the general source codes
+		 realSubjects/SATIBEA_Drupal/SATIBEA_Drupal: the core source codes of SATIBEA
+		 realSubjects/SATIBEA_Drupal/SATIBEAv5_Drupal: the core source codes of SATIBEAv5
 
+	 For Amazon, the complete source codes of SATIBEAv5 are given in "realSubjects/SATIBEAv5_Amazon".

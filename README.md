@@ -1,99 +1,20 @@
-# balanceValidity
-To Preserve or Not to Preserve Invalid Solutions in Search-Based Software Engineering: A Case Study in Software Product Lines
+This website provides the supplementary stuff of the paper **"To Preserve or Not to Preserve Invalid Solutions in Search-Based Software Engineering: A Case Study in Software Product Lines"**, accepted by *ICSE'18: the 40th International Conference on Software Engineering, May 27 - 3 June 2018, Gothenburg, Sweden*
 
-Introduction
+## Subjects
+We evaluated seven subjects in software produce lines: _eCos_, _FreeBSD_, _Fiasco_, _uClinux_, _Linux_, _Drupal_, and _AmazonEC2_. The data of these subjects, including feature models, attribute values, and attribute constraints, are publicly available. Here are the sources:
+* _eCos_, _FreeBSD_, _Fiasco_, _uClinux_, _Linux_ : [1]
+* _Drupal_ : [2]
+* _AmazonEC2_ : [3]
 
-This work releases five different SATIBEA variants that combins the IBEA (Indicator-Based Evolutionary Algorithm)
-with the SAT (Boolean satisfiability problem) solving to address the configuration optimization problem 
-in five real-world SPLs (Linux, eCos, Fiasco, FreeBSD and uClinux). 
-The original SATIBEA [1] is the first hybird method that combinges SAT sovling with the muation operator of the IBEA algorithm.
-Specially, we also release two additional algorihtms for solving two SPLs
-with realisitc values and constraints of quality attributes (AmazonEC2 and Drupal).
+## Algorithms and Results
+We used _SATIBEA_ [1] as a baseline and designed five algorithm variants (_SATIBEAv1_, _SATIBEAv2_, _SATIBEAv3_, _SATIBEAv4_, and _SATIBEAv5_) that incorporate SAT solving into the initial population generation and the mutation operator of IBEA in different ways. Moreover, one algorithm (_SATIBEAv5_) designed to preserve valid solutions all along the way further incorporates a subroutine that resolves non-Boolean constraints over integer or real-number variables together with arithmetic or relational operators, which cannot be straightforwardly addressed by the approaches relying on SAT solving. Note that the subroutine (_src/lib/amazonMapping.jar_) is enabled only for _AmazonEC2_, the only one containing non-Boolean attribute constraints in our subjects.
+* _src/lib/_  includes the core jar packages used by all algorithms.
+* _src/common/_  includes the common Jave code of all algorithms. The common code must be combined with the specific code (if it exists) to run a particular algorithm for a certain subject. 
+* _results/_  includes the experimental results for each algorithm and for each subject.
 
-The implementation framework of each algorithm variant adopts the IBEA algorithm template
-of jMetal[2,3], an open-source Java-based framework for multi-objective optimization with metaheuristics.
-Moreover, the constraint solving uses a widely deploy SAT solver Sat4j[4] as the underlying SAT solver.
-
-In this repository, we release the source code and the origianl experimental results. 
-Researchers firstly need to conduct seven feature models mentioned in above so that they can run our algorithms successfully. 
-The feature model of Linux, eCos, Fiasco, FreeBSD and uClinux can refer to Henard et al.'s [1].
-The feature model of Drupal and AmazonEC2 can refer to [5, 6], respectively.
-
----------------------------------------------------------------------------------------------------------------
-References
-
+## References
 [1] Christopher Henard, Mike Papadakis, Mark Harman, and Yves Le Traon. 2015. Combining multi-objective search and constraint solving for configuring large software product lines. In Proceedings of 37th IEEE/ACM International Conference on Software Engineering (ICSE). 517–528.
 
-[2] J. J. Durillo, A. J. Nebro, and E. Alba, “The jMetal framework for multi-objective optimization: Design and architecture,” in Proceedings of the IEEE Congress on Evolutionary Computation (CEC), Barcelona, Spain. IEEE, pp. 4138–4325.
+[2] Ana B. Sánchez, Sergio Segura, José Antonio Parejo, and Antonio Ruiz Cortés. 2017. Variability testing in the wild: the Drupal case study. Software & Systems Modeling 16, 1 (2017), 173–194.
 
-[3] Juan J. Durillo and Antonio J. Nebro. 2011. jMetal: A Java framework for multiobjective optimization. Advances in Engineering Software 42 (2011), 760–771.
-
-[4] http://www.sat4j.org/
-
-[5] Jesús García-Galán, Pablo Trinidad, Omer F. Rana, and Antonio Ruiz Cortés. 2016. Automated configuration support for infrastructure migration to the cloud. Future Generation Comp. Syst. 55 (2016), 200–212.
-
-[6] Ana B. Sánchez, Sergio Segura, José Antonio Parejo, and Antonio Ruiz Cortés. 2017. Variability testing in the wild: the Drupal case study. Software and System Modeling 16, 1 (2017), 173–194.
-
----------------------------------------------------------------------------------------------------------------
-
-
-How to run?
-
-For five SPLs:
-   1. The core jar packages used by all variants are in "lib" folder. They must be importted into a project.
-   2. The general jave files of five SATIBEA variants are in "Common" folder.
-   3. Each variant framework is composed of the "Common" folder and a special algorithm folder including SATIBEA, SATIBEAv1, SATIBEAv2, SATIBEAv3, SATIBEAv4 and SATIBEAv5
-
-We mainly introduce the source code of the SATIBEA. The others are similar to the SATIBEA.
-   1. The Common folder contains the following files:
-      1.1> SAT_Decision.java: a customized file of performing constriant checking and a function returning 
-	                              a valid configuration of the feature model.				
-	  
-      1.2> WriteStreamAppend.java: this code can be used to recored the experimential results and 
-                                           important details during the whole process of algorithm running.
-	  
-      1.3> SATIBEA_BinarySolution.java: the structure of the solution.					
-	  
-      1.4> SATIBEA_BitFlipMutation.java: the soruce code of the bit-flip muation operation.
-	  
-      1.5> SATIBEA_SinglePointCrossover.java: the source code of the singlepoint crossover operation.
-	  
-      1.6> SATIBEA_Problem.java: we define the structure of optimization problem which shoule be solved.
-				          This code shoule input the featue model file, the constraint file and 
-					  the attribute file of featues.			
-   
-   2. The SATIBEA folder contains the following files:
-	
-      2.1> IBEATimeLimited.java: we perform the SATIBEA algorithm evaluation with the terminal condition.
-	    
-      2.2> SATIBEA_SettingsIBEA.java: we configure the SATIBEA algorithm,
-					including problem, the crossover operation, the muation operation,
-                                        the seleciton operation and the parameter setting of populationsize,
-                                        mutationProbability and crossoverProbability.
-	    
-      2.3> SATIBEA_NewMutation.java: a smart mutation strategy 
-	                                in which SAT solving is invoked with a probability to return a valid 
-					solution during the mutation operation. Meanwhile, this strategy includes
-                                        the standard bit-flip mutation and SAT sovling.
-	    
-      2.4> SATIBEA_Variants_Main.java: the main entrace to an algorithm. 
-					Please, starting from here, the entrie process is automated.
-   
-   3. The SATIBEAv2 algorithm is composed of the SATIBEAv2 folder and part code file in Common folder 
-            (SATIBEA_BinarySolution.java, SAT_Decision.java, WriteStreamAppend.java and SATIBEA_SinglePointCrossover.java). 
-	    Specially, The "RichSeedGen.java" is used to generate a solution according to the rich seed.
-
----------------------------------------------------------------------------------------------------------------	
-For two real-world SPLs:
-   
-   1. For two real-world SPLs: the "realSubjects" folder is the soruce code of SATIBEA and SATIBEAv5 for address two real-world SPLs.
-      
-      1.1> For Drupal, the folder structure is similar to the above descripiton.
-           
-	     realSubjects/SATIBEA_Drupal/Common: the general source codes
-	   
-	     realSubjects/SATIBEA_Drupal/SATIBEA_Drupal: the core source codes of SATIBEA
-	   
-	     realSubjects/SATIBEA_Drupal/SATIBEAv5_Drupal: the core source codes of SATIBEAv5
-      
-      1.2> For Amazon, the complete source codes of SATIBEAv5 are given in "realSubjects/SATIBEAv5_Amazon".
+[3] Jesús García-Galán, Pablo Trinidad, Omer F. Rana, and Antonio Ruiz Cortés. 2016. Automated configuration support for infrastructure migration to the cloud. Future Generation Comp. Syst. 55 (2016), 200–212.
